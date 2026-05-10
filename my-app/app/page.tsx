@@ -11,7 +11,7 @@ export default function Dashboard() {
   const [sessions, setSessions] = useState<any[]>([]);
   const [bandwidth, setBandwidth] = useState<any[]>([]);
   const [interfaces, setInterfaces] = useState<any[]>([]);
-  const [lastUpdate, setLastUpdate] = useState<Date>(new Date());
+  const [lastUpdate, setLastUpdate] = useState<string>('');
 
   const load = useCallback(async () => {
     try {
@@ -25,7 +25,7 @@ export default function Dashboard() {
       setSessions(sh);
       setBandwidth(bw);
       setInterfaces(iface);
-      setLastUpdate(new Date());
+      setLastUpdate(new Date().toLocaleTimeString());
     } catch (e) {
       console.error('Fetch error:', e);
     }
@@ -80,7 +80,7 @@ export default function Dashboard() {
               background: 'var(--green)',
               animation: 'pulse 2s infinite',
             }} />
-            Live — {lastUpdate.toLocaleTimeString()}
+            Live — {lastUpdate || '—'}
           </div>
         </div>
 
