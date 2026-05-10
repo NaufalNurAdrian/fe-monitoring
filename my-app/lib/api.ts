@@ -1,5 +1,5 @@
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'https://api.quantexnetworks.com';
-const WS_URL = process.env.NEXT_PUBLIC_WS_URL || 'wss://api.quantexnetworks.com';
+const API_BASE = 'https://api.quantexnetworks.com';
+const WS_URL = 'wss://api.quantexnetworks.com';
 
 export { API_BASE, WS_URL };
 
